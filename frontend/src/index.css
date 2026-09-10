@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-base-900 text-slate-200 font-sans antialiased;
+  }
+
+  /* Scrollbar discreto acorde al dark mode */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-base-500;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #33415a;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-xl border border-white/5 bg-base-700 shadow-card;
+  }
+
+  .label {
+    @apply mb-1.5 block text-xs font-medium uppercase tracking-wide text-slate-400;
+  }
+
+  .input {
+    @apply w-full rounded-lg border border-white/10 bg-base-800 px-3.5 py-2.5 text-sm text-slate-100
+      placeholder:text-slate-500 outline-none transition
+      focus:border-accent/60 focus:ring-2 focus:ring-accent/25 disabled:opacity-50;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold
+      transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-base-900
+      disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply btn bg-accent text-white hover:bg-accent-soft focus:ring-accent/60;
+  }
+
+  .btn-ghost {
+    @apply btn border border-white/10 bg-base-600 text-slate-200 hover:bg-base-500 focus:ring-white/20;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold;
+  }
+}
