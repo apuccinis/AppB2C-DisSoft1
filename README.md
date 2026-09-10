@@ -114,12 +114,17 @@ cd ../frontend
 cp .env.example .env
 ```
 
+> **No hay que editar nada.** Los valores de ejemplo ya están listos para ejecutar el
+> proyecto en local: no existe ninguna clave de API que registrar ni credencial de base
+> de datos que rellenar. Las tablas siguientes son solo de referencia, por si quieres
+> ajustar el puerto, la comisión o la velocidad de la simulación.
+
 **`backend/.env`**
 
 | Variable | Valor por defecto | Descripción |
 |----------|-------------------|-------------|
 | `PORT` | `5000` | Puerto de la API |
-| `JWT_SECRET` | `change_this_secret` | Clave de firma de los JWT — **cámbiala** |
+| `JWT_SECRET` | `change_this_secret` | Clave de firma de los JWT. El valor de ejemplo sirve para desarrollo local; solo hay que sustituirlo si se despliega la aplicación |
 | `JWT_EXPIRES_IN` | `7d` | Duración de la sesión |
 | `TRADING_FEE_RATE` | `0.005` | Comisión aplicada a cada operación (0.5 %) |
 | `DATABASE_PATH` | `./data/trading.db` | Ruta del archivo SQLite |
